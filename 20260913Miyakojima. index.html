@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宮古島海島秘境四天三夜行程 🌺</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts: Zen Maru Gothic & Noto Sans TC -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            fuji: {
+              DEFAULT: '#3B7AAE',
+              50: '#F2F7FA',
+              100: '#E3EEF5',
+              200: '#C2DCEB',
+              500: '#3B7AAE',
+              600: '#2F628C',
+              700: '#234868',
+            },
+            warmgray: '#F7F7F8',
+            cream: '#FAF9F6'
+          },
+          fontFamily: {
+            sans: ['"Noto Sans TC"', 'sans-serif'],
+            rounded: ['"Zen Maru Gothic"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* 韓式可愛點點背景 */
+    .bg-dot-pattern {
+      background-color: #F7F7F8;
+      background-image: radial-gradient(#3B7AAE 14%, transparent 14%);
+      background-size: 18px 18px;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-dot-pattern min-h-screen text-slate-700 font-sans pb-28">
+
+  <!-- 手機優先容器 -->
+  <div class="max-w-md mx-auto min-h-screen bg-warmgray/90 shadow-2xl relative flex flex-col border-x border-slate-200/50">
+
+    <!-- Header 頂部看板 -->
+    <header class="bg-gradient-to-b from-fuji-500 to-fuji-600 text-white p-6 rounded-b-[2.5rem] shadow-lg relative overflow-hidden">
+      <div class="absolute -right-6 -bottom-6 w-28 h-28 bg-white/10 rounded-full blur-xl"></div>
+      <div class="absolute right-12 top-4 w-12 h-12 bg-white/10 rounded-full blur-md"></div>
+
+      <div class="flex justify-between items-start mb-3 relative z-10">
+        <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-medium tracking-wide">
+          ✈️ 星宇航空雙人自駕遊
+        </span>
+        <span class="text-xs bg-amber-300 text-amber-900 font-bold px-2.5 py-0.5 rounded-full shadow-sm">
+          2026/09/13 - 09/16
+        </span>
+      </div>
+
+      <h1 class="text-2xl font-bold font-rounded tracking-wide mb-1 leading-tight relative z-10">
+        宮古島海島秘境 <br><span class="text-amber-200">四天三夜行程</span> 🌊
+      </h1>
+      <p class="text-xs text-fuji-100 mt-2 flex items-center gap-1 relative z-10">
+        <i class="fa-solid fa-hotel text-amber-300"></i> Canopy by Hilton 連續入住 3 晚
+      </p>
+
+      <!-- 快速卡片切換頁籤 -->
+      <div class="mt-5 flex gap-2 overflow-x-auto no-scrollbar pb-1 text-xs relative z-10">
+        <button onclick="switchTab('overview')" id="tab-overview" class="tab-btn px-4 py-2 rounded-2xl bg-white text-fuji-600 font-bold shadow-sm transition-all whitespace-nowrap">
+          📌 行程總覽
+        </button>
+        <button onclick="switchTab('day1')" id="tab-day1" class="tab-btn px-4 py-2 rounded-2xl bg-white/20 text-white font-medium transition-all whitespace-nowrap">
+          D1 · 下地島秘境
+        </button>
+        <button onclick="switchTab('day2')" id="tab-day2" class="tab-btn px-4 py-2 rounded-2xl bg-white/20 text-white font-medium transition-all whitespace-nowrap">
+          D2 · 風車與雪塩
+        </button>
+        <button onclick="switchTab('day3')" id="tab-day3" class="tab-btn px-4 py-2 rounded-2xl bg-white/20 text-white font-medium transition-all whitespace-nowrap">
+          D3 · 浮潛與夕陽
+        </button>
+        <button onclick="switchTab('day4')" id="tab-day4" class="tab-btn px-4 py-2 rounded-2xl bg-white/20 text-white font-medium transition-all whitespace-nowrap">
+          D4 · 採買返台
+        </button>
+        <button onclick="switchTab('budget')" id="tab-budget" class="tab-btn px-4 py-2 rounded-2xl bg-amber-300 text-amber-900 font-bold shadow-sm transition-all whitespace-nowrap">
+          💰 即時記帳
+        </button>
+      </div>
+    </header>
+
+    <!-- 主要內容區塊 -->
+    <main class="p-5 flex-1 space-y-6">
+
+      <!-- ================= 行程總覽 TAB ================= -->
+      <section id="content-overview" class="space-y-4">
+        <!-- 航班資訊卡片 -->
+        <div class="bg-white rounded-3xl p-5 shadow-sm border border-slate-100">
+          <div class="flex items-center justify-between mb-3 border-b border-slate-100 pb-2">
+            <h3 class="font-bold text-fuji-600 flex items-center gap-2 font-rounded">
+              <i class="fa-solid fa-plane-departure"></i> 航班資訊
+            </h3>
+            <span class="text-[11px] bg-sky-50 text-sky-600 px-2.5 py-0.5 rounded-full font-medium">星宇航空</span>
+          </div>
+          <div class="space-y-3 text-xs">
+            <div class="flex justify-between items-center bg-slate-50 p-3 rounded-2xl">
+              <div>
+                <p class="font-bold text-slate-800">去程 JX 308</p>
+                <p class="text-slate-500">2026/09/13 (日)</p>
+              </div>
+              <div class="text-right">
+                <p class="font-bold text-fuji-600">07:20 RMQ ➔ 09:40 SHI</p>
+                <p class="text-[10px] text-slate-400">台中飛往下地島</p>
+              </div>
+            </div>
+            <div class="flex justify-between items-center bg-slate-50 p-3 rounded-2xl">
+              <div>
+                <p class="font-bold text-slate-800">回程 JX 309</p>
+                <p class="text-slate-500">2026/09/16 (三)</p>
+              </div>
+              <div class="text-right">
+                <p class="font-bold text-fuji-600">10:40 SHI ➔ 11:10 RMQ</p>
+                <p class="text-[10px] text-slate-400">下地島飛回台中</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 租車與住宿卡片 -->
+        <div class="grid grid-cols-2 gap-3">
+          <div class="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
+            <div class="text-fuji-500 text-lg mb-1"><i class="fa-solid fa-car"></i></div>
+            <h4 class="font-bold text-xs text-slate-800 mb-1">自駕租車</h4>
+            <p class="text-[11px] text-slate-500">宮古下地島機場大廈店</p>
+            <p class="text-[10px] text-emerald-600 font-bold mt-1">SA CLASS 禁菸車</p>
+            <p class="text-[10px] text-amber-600 font-medium mt-1">現場付 ￥31,020 (含保險)</p>
+          </div>
+          <div class="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
+            <div class="text-fuji-500 text-lg mb-1"><i class="fa-solid fa-hotel"></i></div>
+            <h4 class="font-bold text-xs text-slate-800 mb-1">度假村飯店</h4>
+            <p class="text-[11px] text-slate-500">Canopy by Hilton</p>
+            <p class="text-[10px] text-fuji-600 font-bold mt-1">連住 3 晚 (不含餐)</p>
+            <p class="text-[10px] text-slate-400 mt-0.5">09/13 - 09/16</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= DAY 1 TAB ================= -->
+      <section id="content-day1" class="space-y-4 hidden">
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-3 text-center border border-slate-200/60">
+          <h2 class="font-bold text-fuji-600 font-rounded">Day 1 · 09/13 (週日)</h2>
+          <p class="text-xs text-slate-500 mt-0.5">下地島/伊良部島秘境 ➔ 伊良部大橋 ➔ 平良市區</p>
+        </div>
+        <div class="bg-white rounded-3xl p-4 shadow-sm border border-slate-100 space-y-2 text-xs">
+          <p class="font-bold text-slate-800">10:00 下地島機場快速取車</p>
+          <p class="font-bold text-slate-800">10:30 Doug's Burger 漢堡堡 (#必吃)</p>
+          <p class="font-bold text-slate-800">11:45 17END ＆ 通池 (#必拍)</p>
+          <p class="font-bold text-slate-800">13:00 gelato cafe ninufa 義式冰淇淋</p>
+          <p class="font-bold text-slate-800">14:00 伊良部大橋跨海景觀</p>
+          <p class="font-bold text-slate-800">18:45 宮古牛焼肉 玉城 (#必吃)</p>
+        </div>
+      </section>
+
+      <!-- ================= DAY 2 TAB ================= -->
+      <section id="content-day2" class="space-y-4 hidden">
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-3 text-center border border-slate-200/60">
+          <h2 class="font-bold text-fuji-600 font-rounded">Day 2 · 09/14 (週一)</h2>
+          <p class="text-xs text-slate-500 mt-0.5">美式蝦飯 ➔ 北部風車與雪塩 ➔ 傳統宮古麵</p>
+        </div>
+        <div class="bg-white rounded-3xl p-4 shadow-sm border border-slate-100 space-y-2 text-xs">
+          <p class="font-bold text-slate-800">10:30 HARRY'S Shrimp Truck 蝦蝦飯 (#必吃)</p>
+          <p class="font-bold text-slate-800">11:30 西平安名崎白色風車 (#必拍)</p>
+          <p class="font-bold text-slate-800">12:30 雪塩博物館 (#必買)</p>
+          <p class="font-bold text-slate-800">18:00 花風宮古麵 (#必吃)</p>
+        </div>
+      </section>
+
+      <!-- ================= DAY 3 TAB ================= -->
+      <section id="content-day3" class="space-y-4 hidden">
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-3 text-center border border-slate-200/60">
+          <h2 class="font-bold text-fuji-600 font-rounded">Day 3 · 09/15 (週二)</h2>
+          <p class="text-xs text-slate-500 mt-0.5">美式早午餐 ➔ 新城海岸 ➔ 透明獨木舟 ➔ 居酒屋</p>
+        </div>
+        <div class="bg-white rounded-3xl p-4 shadow-sm border border-slate-100 space-y-2 text-xs">
+          <p class="font-bold text-slate-800">10:30 kujira diner 早午餐</p>
+          <p class="font-bold text-slate-800">12:00 新城海岸浮潛找海龜 (#必拍)</p>
+          <p class="font-bold text-slate-800">15:45 渡口の浜 透明獨木舟 (#必拍)</p>
+          <p class="font-bold text-slate-800">19:00 西里大通居酒屋 (#必吃)</p>
+        </div>
+      </section>
+
+      <!-- ================= DAY 4 TAB ================= -->
+      <section id="content-day4" class="space-y-4 hidden">
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-3 text-center border border-slate-200/60">
+          <h2 class="font-bold text-fuji-600 font-rounded">Day 4 · 09/16 (週三)</h2>
+          <p class="text-xs text-slate-500 mt-0.5">退房還車 ➔ 機場採買伴手禮 ➔ 搭機返台</p>
+        </div>
+        <div class="bg-white rounded-3xl p-4 shadow-sm border border-slate-100 space-y-2 text-xs">
+          <p class="font-bold text-slate-800">08:30 飯店退房</p>
+          <p class="font-bold text-slate-800">08:45 加油站加滿油並還車</p>
+          <p class="font-bold text-slate-800">09:15 下地島機場 Coral Port 採買</p>
+          <p class="font-bold text-slate-800">10:40 星宇航空 JX 309 飛回台中</p>
+        </div>
+      </section>
+
+      <!-- ================= 即時記帳 TAB ================= -->
+      <section id="content-budget" class="space-y-4 hidden">
+        
+        <!-- 匯率與總計儀表板 -->
+        <div class="bg-gradient-to-br from-fuji-600 to-fuji-700 text-white rounded-3xl p-5 shadow-md space-y-4 relative overflow-hidden">
+          <div class="flex justify-between items-center border-b border-white/10 pb-3">
+            <span class="text-xs font-medium text-fuji-100"><i class="fa-solid fa-calculator"></i> 旅費統計看板</span>
+            <div class="flex items-center gap-1.5 text-xs bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full">
+              <span>匯率：</span>
+              <input type="number" id="rate-input" value="0.215" step="0.001" onchange="updateRate()" class="w-12 bg-transparent text-amber-200 font-bold text-center border-b border-amber-200 outline-none">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 text-center">
+            <div class="bg-white/10 backdrop-blur-sm p-3 rounded-2xl">
+              <p class="text-[10px] text-fuji-200 uppercase font-medium">總支出 (日圓)</p>
+              <p class="text-xl font-bold font-rounded text-amber-200 mt-0.5">￥<span id="total-jpy">0</span></p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-3 rounded-2xl">
+              <p class="text-[10px] text-fuji-200 uppercase font-medium">約合台幣 (TWD)</p>
+              <p class="text-xl font-bold font-rounded text-white mt-0.5">NT$ <span id="total-twd">0</span></p>
+            </div>
+          </div>
+
+          <div class="flex justify-between text-[11px] text-fuji-100 bg-black/10 p-2.5 rounded-xl">
+            <span>💵 現金支付：￥<b id="cash-jpy" class="text-white">0</b></span>
+            <span>💳 刷卡支付：￥<b id="card-jpy" class="text-white">0</b></span>
+          </div>
+        </div>
+
+        <!-- 新增消費表單卡片 -->
+        <div class="bg-white rounded-3xl p-4 shadow-sm border border-slate-100 space-y-3 text-xs">
+          <h3 class="font-bold text-slate-800 flex items-center gap-2 font-rounded">
+            <i class="fa-solid fa-plus-circle text-fuji-500"></i> 新增一筆消費
+          </h3>
+
+          <div class="space-y-2">
+            <div>
+              <label class="block text-[11px] text-slate-500 mb-1">消費項目名稱</label>
+              <input type="text" id="item-name" placeholder="例如：Doug's 漢堡、宮古牛燒肉" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 outline-none focus:border-fuji-500">
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label class="block text-[11px] text-slate-500 mb-1">金額 (日圓 ￥)</label>
+                <input type="number" id="item-amount" placeholder="0" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 outline-none focus:border-fuji-500 font-bold text-slate-800">
+              </div>
+              <div>
+                <label class="block text-[11px] text-slate-500 mb-1">付款方式</label>
+                <select id="item-payment" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 outline-none focus:border-fuji-500">
+                  <option value="現金">💵 現金</option>
+                  <option value="刷卡">💳 刷卡</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-[11px] text-slate-500 mb-1">分類</label>
+              <select id="item-category" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 outline-none focus:border-fuji-500">
+                <option value="食物">🍔 食物</option>
+                <option value="購物">🛍️ 購物</option>
+                <option value="交通">🚗 交通</option>
+                <option value="景點">🎟️ 景點/活動</option>
+                <option value="住宿">🏨 住宿</option>
+                <option value="其他">📦 其他</option>
+              </select>
+            </div>
+
+            <button onclick="addExpense()" class="w-full bg-fuji-500 hover:bg-fuji-600 text-white font-bold py-2.5 rounded-2xl shadow-sm transition-all text-xs font-rounded mt-1">
+              + 儲存此筆紀錄
+            </button>
+          </div>
+        </div>
+
+        <!-- 消費明細列表 -->
+        <div class="bg-white rounded-3xl p-4 shadow-sm border border-slate-100 space-y-3 text-xs">
+          <div class="flex justify-between items-center border-b border-slate-100 pb-2">
+            <h3 class="font-bold text-slate-800 font-rounded">📋 消費明細歷史</h3>
+            <button onclick="clearAllExpenses()" class="text-[10px] text-rose-500 hover:underline">清空所有紀錄</button>
+          </div>
+
+          <div id="expense-list" class="space-y-2">
+            <!-- 動態渲染處 -->
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- 底部浮動導覽條 -->
+    <nav class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] max-w-md bg-white/90 backdrop-blur-md rounded-full shadow-lg border border-slate-200/80 p-2 flex justify-around items-center z-50">
+      <button onclick="switchTab('overview')" id="nav-overview" class="nav-btn flex flex-col items-center gap-0.5 text-fuji-600 transition-all">
+        <i class="fa-solid fa-house text-sm"></i>
+        <span class="text-[10px] font-medium">總覽</span>
+      </button>
+      <button onclick="switchTab('day1')" id="nav-day1" class="nav-btn flex flex-col items-center gap-0.5 text-slate-400 transition-all">
+        <i class="fa-solid fa-calendar-day text-sm"></i>
+        <span class="text-[10px] font-medium">D1</span>
+      </button>
+      <button onclick="switchTab('day2')" id="nav-day2" class="nav-btn flex flex-col items-center gap-0.5 text-slate-400 transition-all">
+        <i class="fa-solid fa-calendar-day text-sm"></i>
+        <span class="text-[10px] font-medium">D2</span>
+      </button>
+      <button onclick="switchTab('day3')" id="nav-day3" class="nav-btn flex flex-col items-center gap-0.5 text-slate-400 transition-all">
+        <i class="fa-solid fa-calendar-day text-sm"></i>
+        <span class="text-[10px] font-medium">D3</span>
+      </button>
+      <button onclick="switchTab('day4')" id="nav-day4" class="nav-btn flex flex-col items-center gap-0.5 text-slate-400 transition-all">
+        <i class="fa-solid fa-calendar-day text-sm"></i>
+        <span class="text-[10px] font-medium">D4</span>
+      </button>
+      <button onclick="switchTab('budget')" id="nav-budget" class="nav-btn flex flex-col items-center gap-0.5 text-slate-400 transition-all">
+        <i class="fa-solid fa-wallet text-sm"></i>
+        <span class="text-[10px] font-medium">記帳</span>
+      </button>
+    </nav>
+
+  </div>
+
+  <!-- JavaScript 記帳與頁籤切換邏輯 -->
+  <script>
+    // 初始化預載資料與 LocalStorage
+    let defaultExpenses = [
+      { id: 1, name: '下地島機場租車費用 (SA Class)', category: '交通', amount: 31020, payment: '刷卡' }
+    ];
+
+    let expenses = JSON.parse(localStorage.getItem('miyako_expenses')) || defaultExpenses;
+    let exchangeRate = parseFloat(localStorage.getItem('miyako_rate')) || 0.215;
+
+    document.getElementById('rate-input').value = exchangeRate;
+
+    function switchTab(tabId) {
+      const sections = ['overview', 'day1', 'day2', 'day3', 'day4', 'budget'];
+      sections.forEach(id => {
+        const content = document.getElementById(`content-${id}`);
+        if (content) content.classList.add('hidden');
+      });
+
+      const activeContent = document.getElementById(`content-${tabId}`);
+      if (activeContent) activeContent.classList.remove('hidden');
+
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-white', 'text-fuji-600', 'font-bold');
+        btn.classList.add('bg-white/20', 'text-white', 'font-medium');
+      });
+      const activeTab = document.getElementById(`tab-${tabId}`);
+      if (activeTab) {
+        activeTab.classList.remove('bg-white/20', 'text-white', 'font-medium');
+        activeTab.classList.add('bg-white', 'text-fuji-600', 'font-bold');
+      }
+
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove('text-fuji-600');
+        btn.classList.add('slate-400');
+      });
+      const activeNav = document.getElementById(`nav-${tabId}`);
+      if (activeNav) {
+        activeNav.classList.remove('text-slate-400');
+        activeNav.classList.add('text-fuji-600');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function updateRate() {
+      const rateVal = parseFloat(document.getElementById('rate-input').value);
+      if (!isNaN(rateVal) && rateVal > 0) {
+        exchangeRate = rateVal;
+        localStorage.setItem('miyako_rate', exchangeRate);
+        renderExpenses();
+      }
+    }
+
+    function renderExpenses() {
+      const listEl = document.getElementById('expense-list');
+      listEl.innerHTML = '';
+
+      let totalJpy = 0;
+      let cashJpy = 0;
+      let cardJpy = 0;
+
+      if (expenses.length === 0) {
+        listEl.innerHTML = `<p class="text-center text-slate-400 py-4 text-[11px]">目前尚無記帳紀錄，趕快新增第一筆吧！</p>`;
+      } else {
+        expenses.forEach((item) => {
+          totalJpy += item.amount;
+          if (item.payment === '現金') cashJpy += item.amount;
+          else cardJpy += item.amount;
+
+          const itemEl = document.createElement('div');
+          itemEl.className = 'flex justify-between items-center bg-slate-50 p-2.5 rounded-2xl border border-slate-100';
+          itemEl.innerHTML = `
+            <div>
+              <div class="flex items-center gap-1.5">
+                <span class="font-bold text-slate-800">${item.name}</span>
+                <span class="text-[9px] bg-sky-100 text-sky-700 px-1.5 py-0.2 rounded font-medium">${item.category}</span>
+                <span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.2 rounded">${item.payment}</span>
+              </div>
+              <p class="text-[10px] text-slate-400 mt-0.5">約 NT$ ${Math.round(item.amount * exchangeRate)}</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-fuji-600">￥${item.amount.toLocaleString()}</span>
+              <button onclick="deleteExpense(${item.id})" class="text-slate-300 hover:text-rose-500 transition-colors px-1">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          `;
+          listEl.appendChild(itemEl);
+        });
+      }
+
+      document.getElementById('total-jpy').innerText = totalJpy.toLocaleString();
+      document.getElementById('total-twd').innerText = Math.round(totalJpy * exchangeRate).toLocaleString();
+      document.getElementById('cash-jpy').innerText = cashJpy.toLocaleString();
+      document.getElementById('card-jpy').innerText = cardJpy.toLocaleString();
+
+      localStorage.setItem('miyako_expenses', JSON.stringify(expenses));
+    }
+
+    function addExpense() {
+      const nameInput = document.getElementById('item-name');
+      const amountInput = document.getElementById('item-amount');
+      const categoryInput = document.getElementById('item-category');
+      const paymentInput = document.getElementById('item-payment');
+
+      const name = nameInput.value.trim();
+      const amount = parseFloat(amountInput.value);
+
+      if (!name || isNaN(amount) || amount <= 0) {
+        alert('請輸入有效的項目名稱與金額！');
+        return;
+      }
+
+      const newExpense = {
+        id: Date.now(),
+        name: name,
+        category: categoryInput.value,
+        amount: amount,
+        payment: paymentInput.value
+      };
+
+      expenses.unshift(newExpense);
+      renderExpenses();
+
+      nameInput.value = '';
+      amountInput.value = '';
+    }
+
+    function deleteExpense(id) {
+      expenses = expenses.filter(item => item.id !== id);
+      renderExpenses();
+    }
+
+    function clearAllExpenses() {
+      if (confirm('確定要清空所有記帳紀錄嗎？')) {
+        expenses = [];
+        renderExpenses();
+      }
+    }
+
+    // 頁面加載完成後自動渲染列表
+    document.addEventListener('DOMContentLoaded', () => {
+      renderExpenses();
+    });
+  </script>
+</body>
+</html>
