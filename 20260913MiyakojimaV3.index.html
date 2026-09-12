@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宮古島海島秘境四天三夜行程 🌺</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            fuji: {
+              DEFAULT: '#3B7AAE',
+              50: '#F2F7FA',
+              100: '#E3EEF5',
+              200: '#C2DCEB',
+              500: '#3B7AAE',
+              600: '#2F628C',
+              700: '#234868',
+            },
+            warmgray: '#F7F7F8',
+            cream: '#FAF9F6'
+          },
+          fontFamily: {
+            sans: ['"Noto Sans TC"', 'sans-serif'],
+            rounded: ['"Zen Maru Gothic"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* 韓式圓角卡片與點點背景 */
+    .bg-dot-pattern {
+      background-color: #F7F7F8;
+      background-image: radial-gradient(#3B7AAE 14%, transparent 14%);
+      background-size: 18px 18px;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-dot-pattern min-h-screen text-slate-700 font-sans pb-28">
+
+  <!-- 手機優先容器 -->
+  <div class="max-w-md mx-auto min-h-screen bg-warmgray/90 shadow-2xl relative flex flex-col border-x border-slate-200/50">
+
+    <!-- Header 頂部看板 -->
+    <header class="bg-gradient-to-b from-fuji-500 to-fuji-600 text-white p-6 rounded-b-[2.5rem] shadow-lg relative overflow-hidden">
+      <div class="absolute -right-6 -bottom-6 w-28 h-28 bg-white/10 rounded-full blur-xl"></div>
+      <div class="absolute right-12 top-4 w-12 h-12 bg-white/10 rounded-full blur-md"></div>
+
+      <div class="flex justify-between items-start mb-3 relative z-10">
+        <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-medium tracking-wide">
+          ✈️ 星宇航空雙人自駕遊
+        </span>
+        <span class="text-xs bg-amber-300 text-amber-900 font-bold px-2.5 py-0.5 rounded-full shadow-sm">
+          2026/09/13 - 09/16
+        </span>
+      </div>
+
+      <h1 class="text-2xl font-bold font-rounded tracking-wide mb-1 leading-tight relative z-10">
+        宮古島海島秘境 <br><span class="text-amber-200">四天三夜行程</span> 🌊
+      </h1>
+      <p class="text-xs text-fuji-100 mt-2 flex items-center gap-1 relative z-10">
+        <i class="fa-solid fa-hotel text-amber-300"></i> Canopy by Hilton 連續入住 3 晚
+      </p>
+
+      <!-- 頁籤導覽按鈕 -->
+      <div class="mt-5 flex gap-2 overflow-x-auto no-scrollbar pb-1 text-xs relative z-10">
+        <button onclick="switchTab('overview')" id="tab-overview" class="tab-btn px-4 py-2 rounded-2xl bg-white text-fuji-600 font-bold shadow-sm transition-all whitespace-nowrap">
+          📌 行程總覽
+        </button>
+        <button onclick="switchTab('day1')" id="tab-day1" class="tab-btn px-4 py-2 rounded-2xl bg-white/20 text-white font-medium transition-all whitespace-nowrap">
+          D1 · 下地島秘境
+        </button>
+        <button onclick="switchTab('day2')" id="tab-day2" class="tab-btn px-4 py-2 rounded-2xl bg-white/20 text-white font-medium transition-all whitespace-nowrap">
+          D2 · 風車與雪塩
+        </button>
+        <button onclick="switchTab('day3')" id="tab-day3" class="tab-btn px-4 py-2 rounded-2xl bg-white/20 text-white font-medium transition-all whitespace-nowrap">
+          D3 · 浮潛與夕陽
+        </button>
+        <button onclick="switchTab('day4')" id="tab-day4" class="tab-btn px-4 py-2 rounded-2xl bg-white/20 text-white font-medium transition-all whitespace-nowrap">
+          D4 · 採買返台
+        </button>
+        <button onclick="switchTab('budget')" id="tab-budget" class="tab-btn px-4 py-2 rounded-2xl bg-amber-300 text-amber-900 font-bold shadow-sm transition-all whitespace-nowrap">
+          💰 即時記帳
+        </button>
+      </div>
+    </header>
+
+    <!-- 主要內容區 -->
+    <main class="p-5 flex-1 space-y-6">
+
+      <!-- ================= 行程總覽 TAB ================= -->
+      <section id="content-overview" class="space-y-4">
+        <!-- 航班資訊 -->
+        <div class="bg-white rounded-3xl p-5 shadow-sm border border-slate-100">
+          <div class="flex items-center justify-between mb-3 border-b border-slate-100 pb-2">
+            <h3 class="font-bold text-fuji-600 flex items-center gap-2 font-rounded">
+              <i class="fa-solid fa-plane-departure"></i> 航班資訊
+            </h3>
+            <span class="text-[11px] bg-sky-50 text-sky-600 px-2.5 py-0.5 rounded-full font-medium">星宇航空</span>
+          </div>
+          <div class="space-y-3 text-xs">
+            <div class="flex justify-between items-center bg-slate-50 p-3 rounded-2xl">
+              <div>
+                <p class="font-bold text-slate-800">去程 JX 308</p>
+                <p class="text-slate-500">2026/09/13 (日)</p>
+              </div>
+              <div class="text-right">
+                <p class="font-bold text-fuji-600">07:20 RMQ ➔ 09:40 SHI</p>
+                <p class="text-[10px] text-slate-400">台中飛往下地島</p>
+              </div>
+            </div>
+            <div class="flex justify-between items-center bg-slate-50 p-3 rounded-2xl">
+              <div>
+                <p class="font-bold text-slate-800">回程 JX 309</p>
+                <p class="text-slate-500">2026/09/16 (三)</p>
+              </div>
+              <div class="text-right">
+                <p class="font-bold text-fuji-600">10:40 SHI ➔ 11:10 RMQ</p>
+                <p class="text-[10px] text-slate-400">下地島飛回台中</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 租車與住宿 -->
+        <div class="grid grid-cols-2 gap-3">
+          <div class="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
+            <div class="text-fuji-500 text-lg mb-1"><i class="fa-solid fa-car"></i></div>
+            <h4 class="font-bold text-xs text-slate-800 mb-1">自駕租車</h4>
+            <p class="text-[11px] text-slate-500">宮古下地島機場大廈店</p>
+            <p class="text-[10px] text-emerald-600 font-bold mt-1">SA CLASS 禁菸車</p>
+            <p class="text-[10px] text-amber-600 font-medium mt-1">現場付 ￥31,020 (含保險)</p>
+          </div>
+          <div class="bg-white rounded-3xl p-4 shadow-sm border border-slate-100">
+            <div class="text-fuji-500 text-lg mb-1"><i class="fa-solid fa-hotel"></i></div>
+            <h4 class="font-bold text-xs text-slate-800 mb-1">度假村飯店</h4>
+            <p class="text-[11px] text-slate-500">Canopy by Hilton</p>
+            <p class="text-[10px] text-fuji-600 font-bold mt-1">連住 3 晚 (不含餐)</p>
+            <p class="text-[10px] text-slate-400 mt-0.5">09/13 - 09/16</p>
+          </div>
+        </div>
+
+        <!-- 自駕提醒 -->
+        <div class="bg-amber-50/80 rounded-3xl p-4 border border-amber-200/60 text-xs text-amber-900 space-y-2">
+          <h4 class="font-bold flex items-center gap-1 text-amber-800 font-rounded">
+            <i class="fa-solid fa-triangle-exclamation"></i> 導遊行前提醒
+          </h4>
+          <ul class="list-disc list-inside space-y-1 text-[11px] text-amber-800/90 leading-relaxed">
+            <li>務必隨身攜帶 **台灣駕照正本 + 日文譯本**。</li>
+            <li>日本右駕切記 **左小彎、右大彎**，限速 30-50 km/h。</li>
+            <li>跨越 **伊良部大橋** 時側風較大，**嚴禁橋上停車拍照**。</li>
+            <li>還車前請於機場附近（ENEOS/JA）**加滿 Regular 無鉛汽油並保留發票**。</li>
+            <li>請準備 **海洋友善防曬乳** 與墨鏡，保護珊瑚生態。</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ================= DAY 1 TAB ================= -->
+      <section id="content-day1" class="space-y-4 hidden">
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-3 text-center border border-slate-200/60">
+          <h2 class="font-bold text-fuji-600 font-rounded">Day 1 · 09/13 (週日)</h2>
+          <p class="text-xs text-slate-500 mt-0.5">下地島/伊良部島秘境 ➔ 跨越伊良部大橋 ➔ 平良市區選物與宮古牛燒肉</p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-4 shadow-sm border border-slate-100 space-y-3 text-xs">
+          <!-- 10:00 -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">10:00 - 10:15 下地島機場快速取車</span>
+              <div class="flex gap-1">
+                <span class="bg-slate-100 text-slate-600 px-2 py-0.5 rounded text-[10px]">交通</span>
+                <span class="bg-amber-100 text-amber-800 px-2 py-0.5 rounded text-[10px] font-bold">#快速取車</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">出關後至櫃檯辦理快速手續，領取 SA Class 禁菸車。</p>
+            <details class="mt-2 text-[11px] text-fuji-600 cursor-pointer">
+              <summary class="font-bold">💡 導遊秘笈</summary>
+              <p class="text-slate-600 mt-1 bg-warmgray p-2 rounded-xl">📸 **拍照技巧**：木質感航廈大廳充滿南國度假感。<br>🚗 **停車＆加油**：出廠前確認車身傷痕與初始油量。</p>
+            </details>
+          </div>
+
+          <!-- 10:30 早午餐 1 -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">10:30 - 11:30 【早午餐 1】Doug's Burger 本店</span>
+              <div class="flex gap-1">
+                <span class="bg-rose-50 text-rose-600 px-2 py-0.5 rounded text-[10px]">食物</span>
+                <span class="bg-rose-100 text-rose-700 px-2 py-0.5 rounded text-[10px] font-bold">#必吃</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">享用多良間黑毛和牛漢堡或黃鰭鮪魚排漢堡。</p>
+            <details class="mt-2 text-[11px] text-fuji-600 cursor-pointer">
+              <summary class="font-bold">💡 導遊秘笈</summary>
+              <p class="text-slate-600 mt-1 bg-warmgray p-2 rounded-xl">📸 **拍照技巧**：漢堡切面朝向鏡頭高角度俯拍多汁肉質。<br>🚗 **停車＆加油**：附設專用停車場，巷弄較窄請放慢速度。</p>
+            </details>
+          </div>
+
+          <!-- 11:45 -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">11:45 - 12:45 【景點】17END ＆ 通池</span>
+              <div class="flex gap-1">
+                <span class="bg-sky-50 text-sky-600 px-2 py-0.5 rounded text-[10px]">景點</span>
+                <span class="bg-sky-100 text-sky-700 px-2 py-0.5 rounded text-[10px] font-bold">#必拍</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">夢幻 Tiffany 藍沙洲與深藍天然連通池塘。</p>
+          </div>
+
+          <!-- 13:00 甜點 -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">13:00 - 13:45 【甜點】gelato cafe ninufa</span>
+              <div class="flex gap-1">
+                <span class="bg-rose-50 text-rose-600 px-2 py-0.5 rounded text-[10px]">食物</span>
+                <span class="bg-rose-100 text-rose-700 px-2 py-0.5 rounded text-[10px] font-bold">#必吃</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">南歐風格別墅內的手作質感義式冰淇淋。</p>
+          </div>
+
+          <!-- 14:00 -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">14:00 - 14:45 【景點】伊良部大橋</span>
+              <div class="flex gap-1">
+                <span class="bg-sky-50 text-sky-600 px-2 py-0.5 rounded text-[10px]">景點</span>
+                <span class="bg-sky-100 text-sky-700 px-2 py-0.5 rounded text-[10px] font-bold">#必拍</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">行駛於全長 3,540 公尺的日本最長免費跨海大橋。</p>
+          </div>
+
+          <!-- 15:00 -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">15:00 - 15:45 【購物】ALEXIA STAM 宮古島店</span>
+              <div class="flex gap-1">
+                <span class="bg-purple-50 text-purple-600 px-2 py-0.5 rounded text-[10px]">購物</span>
+                <span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-[10px] font-bold">#必買</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">質感日系度假風與泳裝選物店。</p>
+          </div>
+
+          <!-- 16:00 -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">16:00 - 16:45 【景點】宮古神社</span>
+              <div class="flex gap-1">
+                <span class="bg-sky-50 text-sky-600 px-2 py-0.5 rounded text-[10px]">景點</span>
+                <span class="bg-sky-100 text-sky-700 px-2 py-0.5 rounded text-[10px] font-bold">#必拍</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">日本最南端神社參拜祈福，順道眺望港灣海景。</p>
+          </div>
+
+          <!-- 17:00 -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">17:00 【飯店 Check-in】Canopy by Hilton</span>
+              <span class="bg-emerald-50 text-emerald-600 px-2 py-0.5 rounded text-[10px]">酒店</span>
+            </div>
+            <p class="text-slate-500 text-[11px]">辦理入住手續並放置行李。</p>
+          </div>
+
+          <!-- 17:40 咖啡 (補齊) -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">17:40 - 18:30 【咖啡】ningin coffee</span>
+              <div class="flex gap-1">
+                <span class="bg-rose-50 text-rose-600 px-2 py-0.5 rounded text-[10px]">食物</span>
+                <span class="bg-amber-50 text-amber-700 px-2 py-0.5 rounded text-[10px]">#手沖咖啡</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">前往平良市區享用精緻手沖咖啡與放鬆氣氛。</p>
+          </div>
+
+          <!-- 18:45 晚餐 -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">18:45 - 20:15 【晚餐】宮古牛焼肉 玉城</span>
+              <div class="flex gap-1">
+                <span class="bg-rose-50 text-rose-600 px-2 py-0.5 rounded text-[10px]">食物</span>
+                <span class="bg-rose-100 text-rose-700 px-2 py-0.5 rounded text-[10px] font-bold">#必吃</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">享用頂級宮古牛燒肉盛宴。</p>
+          </div>
+
+          <!-- 20:30 購物 -->
+          <div>
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">20:30 - 21:30 【購物】唐吉訶德 宮古島店</span>
+              <div class="flex gap-1">
+                <span class="bg-purple-50 text-purple-600 px-2 py-0.5 rounded text-[10px]">購物</span>
+                <span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-[10px] font-bold">#必買</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">採買藥妝、零食及行程補給品。</p>
+          </div>
+        </div>
+
+        <div class="bg-sky-50/80 rounded-3xl p-4 border border-sky-100 text-xs text-sky-900 space-y-1.5">
+          <h4 class="font-bold flex items-center gap-1 text-sky-800 font-rounded">
+            <i class="fa-solid fa-shirt"></i> 貼心提醒 · 建議穿著與天氣
+          </h4>
+          <p class="text-[11px] leading-relaxed">
+            <b>👗 建議穿著：</b> 輕便度假風短袖搭涼爽長裙或短褲，方便走動拍照。<br>
+            <b>☀️ 天氣提示：</b> 9 月均溫約 26-32°C，日間陽光折射強烈，請配戴墨鏡並做好防曬。
+          </p>
+        </div>
+      </section>
+
+      <!-- ================= DAY 2 TAB ================= -->
+      <section id="content-day2" class="space-y-4 hidden">
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-3 text-center border border-slate-200/60">
+          <h2 class="font-bold text-fuji-600 font-rounded">Day 2 · 09/14 (週一)</h2>
+          <p class="text-xs text-slate-500 mt-0.5">美式蝦飯早午餐 ➔ 北部風車與雪塩 ➔ 久松市場與傳統宮古麵</p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-4 shadow-sm border border-slate-100 space-y-3 text-xs">
+          <!-- 10:00 出發 (補齊) -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">10:00 飯店出發</span>
+              <span class="bg-slate-100 text-slate-600 px-2 py-0.5 rounded text-[10px]">交通</span>
+            </div>
+            <p class="text-slate-500 text-[11px]">自飯店駕車出發，沿西海岸順向北上。</p>
+          </div>
+
+          <!-- 10:30 早午餐 2 -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">10:30 - 11:30 【早午餐 2】HARRY'S Shrimp Truck</span>
+              <div class="flex gap-1">
+                <span class="bg-rose-50 text-rose-600 px-2 py-0.5 rounded text-[10px]">食物</span>
+                <span class="bg-rose-100 text-rose-700 px-2 py-0.5 rounded text-[10px] font-bold">#必吃</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">西平安名崎旁美式校車餐車享用經典蒜味奶油蝦飯。</p>
+            <details class="mt-2 text-[11px] text-fuji-600 cursor-pointer">
+              <summary class="font-bold">💡 導遊秘笈</summary>
+              <p class="text-slate-600 mt-1 bg-warmgray p-2 rounded-xl">📸 **拍照技巧**：手拿黃色蝦飯盒與美式餐車及海景合影。<br>🚗 **停車＆加油**：使用西平安名崎專用免費停車場。</p>
+            </details>
+          </div>
+
+          <!-- 11:30 -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">11:30 - 12:15 【景點】西平安名崎</span>
+              <div class="flex gap-1">
+                <span class="bg-sky-50 text-sky-600 px-2 py-0.5 rounded text-[10px]">景點</span>
+                <span class="bg-sky-100 text-sky-700 px-2 py-0.5 rounded text-[10px] font-bold">#必拍</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">欣賞地標白色風車與碧藍大海交織的岬角景色。</p>
+          </div>
+
+          <!-- 12:30 -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">12:30 - 13:30 【景點/購物】雪塩博物館</span>
+              <div class="flex gap-1">
+                <span class="bg-purple-50 text-purple-600 px-2 py-0.5 rounded text-[10px]">購物</span>
+                <span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-[10px] font-bold">#必買</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">參觀雪鹽製程，品嚐撒上各式特色鹽款的雪鹽冰淇淋。</p>
+          </div>
+
+          <!-- 14:00 -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">14:00 - 15:00 【景點】宮古島久松市場</span>
+              <span class="bg-purple-50 text-purple-600 px-2 py-0.5 rounded text-[10px]">購物</span>
+            </div>
+            <p class="text-slate-500 text-[11px]">漫步在地傳統市場，體驗島民生活氣息與選購農特產。</p>
+          </div>
+
+          <!-- 15:15 下午茶/甜點 (補齊) -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">15:15 - 16:30 【下午茶/甜點】haruchii</span>
+              <div class="flex gap-1">
+                <span class="bg-rose-50 text-rose-600 px-2 py-0.5 rounded text-[10px]">食物</span>
+                <span class="bg-rose-100 text-rose-700 px-2 py-0.5 rounded text-[10px] font-bold">#必吃</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">享用手作精緻甜點與放鬆咖啡時光。</p>
+          </div>
+
+          <!-- 18:00 晚餐 -->
+          <div>
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">18:00 - 19:30 【晚餐】花風宮古麵</span>
+              <div class="flex gap-1">
+                <span class="bg-rose-50 text-rose-600 px-2 py-0.5 rounded text-[10px]">食物</span>
+                <span class="bg-rose-100 text-rose-700 px-2 py-0.5 rounded text-[10px] font-bold">#必吃</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">品嚐湯頭鮮美、配料豐富的道地傳統宮古蕎麥麵/拉麵。</p>
+          </div>
+        </div>
+
+        <div class="bg-sky-50/80 rounded-3xl p-4 border border-sky-100 text-xs text-sky-900 space-y-1.5">
+          <h4 class="font-bold flex items-center gap-1 text-sky-800 font-rounded">
+            <i class="fa-solid fa-shirt"></i> 貼心提醒 · 建議穿著與天氣
+          </h4>
+          <p class="text-[11px] leading-relaxed">
+            <b>👗 建議穿著：</b> 亮黃色或白色洋裝，在風車與黃色餐車前拍照效果顯眼。<br>
+            <b>☀️ 天氣提示：</b> 岬角地形風勢較大，若戴帽子請留意綁緊固定。
+          </p>
+        </div>
+      </section>
+
+      <!-- ================= DAY 3 TAB ================= -->
+      <section id="content-day3" class="space-y-4 hidden">
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-3 text-center border border-slate-200/60">
+          <h2 class="font-bold text-fuji-600 font-rounded">Day 3 · 09/15 (週二)</h2>
+          <p class="text-xs text-slate-500 mt-0.5">美式早午餐 ➔ 新城海岸浮潛 ➔ 東平安名崎 ➔ 透明獨木舟與絕景夕陽</p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-4 shadow-sm border border-slate-100 space-y-3 text-xs">
+          <!-- 10:00 出發 (補齊) -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">10:00 飯店出發</span>
+              <span class="bg-slate-100 text-slate-600 px-2 py-0.5 rounded text-[10px]">交通</span>
+            </div>
+            <p class="text-slate-500 text-[11px]">自飯店出發展開東海岸與水上活動行程。</p>
+          </div>
+
+          <!-- 10:30 早午餐 3 (補齊) -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">10:30 - 11:30 【早午餐 3】kujira diner</span>
+              <div class="flex gap-1">
+                <span class="bg-rose-50 text-rose-600 px-2 py-0.5 rounded text-[10px]">食物</span>
+                <span class="bg-rose-100 text-rose-700 px-2 py-0.5 rounded text-[10px] font-bold">#必吃</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">享用結合在地食材的美式特色早午餐與主食。</p>
+          </div>
+
+          <!-- 12:00 -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">12:00 - 13:30 【景點】新城海岸</span>
+              <div class="flex gap-1">
+                <span class="bg-amber-50 text-amber-700 px-2 py-0.5 rounded text-[10px]">活動</span>
+                <span class="bg-sky-100 text-sky-700 px-2 py-0.5 rounded text-[10px] font-bold">#必拍</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">清澈平緩熱帶海灘，遇見野生海龜與觀賞珊瑚礁機率極高的浮潛勝地。</p>
+            <details class="mt-2 text-[11px] text-fuji-600 cursor-pointer">
+              <summary class="font-bold">💡 導遊秘笈</summary>
+              <p class="text-slate-600 mt-1 bg-warmgray p-2 rounded-xl">📸 **拍照技巧**：帶防水相機於淺灘跟拍海龜悠游畫面。<br>🚗 **停車＆加油**：使用海岸免費/付費停車場，遵守聖地規範。</p>
+            </details>
+          </div>
+
+          <!-- 14:00 -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">14:00 - 15:15 【景點】東平安名崎</span>
+              <div class="flex gap-1">
+                <span class="bg-sky-50 text-sky-600 px-2 py-0.5 rounded text-[10px]">景點</span>
+                <span class="bg-sky-100 text-sky-700 px-2 py-0.5 rounded text-[10px] font-bold">#必拍</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">延伸入海 2 公里壯麗珊瑚礁岬角，登白燈塔俯瞰 360 度大海。</p>
+          </div>
+
+          <!-- 15:45 -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">15:45 - 17:00 【水上活動】渡口の浜（SUP / 透明獨木舟）</span>
+              <div class="flex gap-1">
+                <span class="bg-amber-50 text-amber-700 px-2 py-0.5 rounded text-[10px]">活動</span>
+                <span class="bg-sky-100 text-sky-700 px-2 py-0.5 rounded text-[10px] font-bold">#必拍</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">搭乘透明底獨木舟，免下水即可直視船底下的珊瑚與魚群。</p>
+          </div>
+
+          <!-- 17:30 -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">17:30 - 18:30 【景點】龍宮城觀景台 ＆ 與那霸前濱海灘</span>
+              <div class="flex gap-1">
+                <span class="bg-sky-50 text-sky-600 px-2 py-0.5 rounded text-[10px]">景點</span>
+                <span class="bg-sky-100 text-sky-700 px-2 py-0.5 rounded text-[10px] font-bold">#必拍</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">登上龍宮城遠眺漸層海景，至「東洋第一美海灘」細軟白沙漫步賞夕陽。</p>
+          </div>
+
+          <!-- 19:00 晚餐 -->
+          <div>
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">19:00 - 20:30 【晚餐】西里大通居酒屋</span>
+              <div class="flex gap-1">
+                <span class="bg-rose-50 text-rose-600 px-2 py-0.5 rounded text-[10px]">食物</span>
+                <span class="bg-rose-100 text-rose-700 px-2 py-0.5 rounded text-[10px] font-bold">#必吃</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">造訪平良市區熱鬧的西里大通商店街，品嚐在地居酒屋與沖繩家常料理。</p>
+          </div>
+        </div>
+
+        <div class="bg-sky-50/80 rounded-3xl p-4 border border-sky-100 text-xs text-sky-900 space-y-1.5">
+          <h4 class="font-bold flex items-center gap-1 text-sky-800 font-rounded">
+            <i class="fa-solid fa-shirt"></i> 貼心提醒 · 建議穿著與天氣
+          </h4>
+          <p class="text-[11px] leading-relaxed">
+            <b>👗 建議穿著：</b> 內穿泳衣外搭水陸兩用罩衫/沙灘褲，便於水上活動。<br>
+            <b>☀️ 天氣提示：</b> 水溫約 28°C 極適合水上活動，上岸請擦乾並做好海洋友善防曬。
+          </p>
+        </div>
+      </section>
+
+      <!-- ================= DAY 4 TAB ================= -->
+      <section id="content-day4" class="space-y-4 hidden">
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-3 text-center border border-slate-200/60">
+          <h2 class="font-bold text-fuji-600 font-rounded">Day 4 · 09/16 (週三)</h2>
+          <p class="text-xs text-slate-500 mt-0.5">還車手續 ➔ 下地島機場採買 ➔ 順利搭機返台</p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-4 shadow-sm border border-slate-100 space-y-3 text-xs">
+          <!-- 08:30 -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">08:30 辦理飯店退房 Check-out</span>
+              <span class="bg-emerald-50 text-emerald-600 px-2 py-0.5 rounded text-[10px]">酒店</span>
+            </div>
+            <p class="text-slate-500 text-[11px]">辦理退房，駕車跨越伊良部大橋前往下地島機場。</p>
+          </div>
+
+          <!-- 08:45 -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">08:45 - 09:00 加油並還車</span>
+              <div class="flex gap-1">
+                <span class="bg-slate-100 text-slate-600 px-2 py-0.5 rounded text-[10px]">交通</span>
+                <span class="bg-amber-100 text-amber-800 px-2 py-0.5 rounded text-[10px] font-bold">#注意發票</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">至下地島機場附近加油站（ENEOS/JA）加滿 Regular 無鉛汽油，保留加油發票，於 09:00 前至店鋪歸還車輛。</p>
+            <details class="mt-2 text-[11px] text-fuji-600 cursor-pointer">
+              <summary class="font-bold">💡 導遊秘笈</summary>
+              <p class="text-slate-600 mt-1 bg-warmgray p-2 rounded-xl">🚗 **停車＆加油**：還車時櫃檯需實體發票核對，請務必妥善保管發票。</p>
+            </details>
+          </div>
+
+          <!-- 09:15 -->
+          <div class="border-b border-slate-100 pb-2.5">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">09:15 - 10:40 機場手續與伴手禮</span>
+              <div class="flex gap-1">
+                <span class="bg-purple-50 text-purple-600 px-2 py-0.5 rounded text-[10px]">購物</span>
+                <span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-[10px] font-bold">#必買</span>
+              </div>
+            </div>
+            <p class="text-slate-500 text-[11px]">於下地島機場 Coral Port 精品店選購限定香蕉蛋糕、黑糖商品伴手禮並辦理登機。</p>
+          </div>
+
+          <!-- 10:40 -->
+          <div>
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-slate-800">10:40 搭乘星宇航空 JX 309 返台</span>
+              <span class="bg-slate-100 text-slate-600 px-2 py-0.5 rounded text-[10px]">交通</span>
+            </div>
+            <p class="text-slate-500 text-[11px]">10:40 下地島起飛 ➔ 11:10 抵達台中 RMQ。</p>
+          </div>
+        </div>
+
+        <div class="bg-sky-50/80 rounded-3xl p-4 border border-sky-100 text-xs text-sky-900 space-y-1.5">
+          <h4 class="font-bold flex items-center gap-1 text-sky-800 font-rounded">
+            <i class="fa-solid fa-shirt"></i> 貼心提醒 · 建議穿著與天氣
+          </h4>
+          <p class="text-[11px] leading-relaxed">
+            <b>👗 建議穿著：</b> 舒適棉質服飾搭薄外套，適應機場與機艙溫差。<br>
+            <b>☀️ 天氣提示：</b> 預留充足加油還車時間，輕鬆逛機場伴手禮店。
+          </p>
+        </div>
+      </section>
+
+      <!-- ================= 即時記帳 TAB ================= -->
+      <section id="content-budget" class="space-y-4 hidden">
+        <div class="bg-gradient-to-br from-fuji-600 to-fuji-700 text-white rounded-3xl p-5 shadow-md space-y-4">
+          <div class="flex justify-between items-center border-b border-white/10 pb-3">
+            <span class="text-xs font-medium text-fuji-100"><i class="fa-solid fa-calculator"></i> 旅費統計看板</span>
+            <div class="flex items-center gap-1.5 text-xs bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full">
+              <span>匯率：</span>
+              <input type="number" id="rate-input" value="0.215" step="0.001" onchange="updateRate()" class="w-12 bg-transparent text-amber-200 font-bold text-center border-b border-amber-200 outline-none">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 text-center">
+            <div class="bg-white/10 backdrop-blur-sm p-3 rounded-2xl">
+              <p class="text-[10px] text-fuji-200 font-medium">總支出 (日圓)</p>
+              <p class="text-xl font-bold font-rounded text-amber-200 mt-0.5">￥<span id="total-jpy">0</span></p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-3 rounded-2xl">
+              <p class="text-[10px] text-fuji-200 font-medium">約合台幣 (TWD)</p>
+              <p class="text-xl font-bold font-rounded text-white mt-0.5">NT$ <span id="total-twd">0</span></p>
+            </div>
+          </div>
+
+          <div class="flex justify-between text-[11px] text-fuji-100 bg-black/10 p-2.5 rounded-xl">
+            <span>💵 現金：￥<b id="cash-jpy" class="text-white">0</b></span>
+            <span>💳 刷卡：￥<b id="card-jpy" class="text-white">0</b></span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl p-4 shadow-sm border border-slate-100 space-y-3 text-xs">
+          <h3 class="font-bold text-slate-800 flex items-center gap-2 font-rounded">
+            <i class="fa-solid fa-plus-circle text-fuji-500"></i> 新增一筆消費
+          </h3>
+          <div class="space-y-2">
+            <input type="text" id="item-name" placeholder="項目名稱 (例如：Doug's 漢堡)" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 outline-none">
+            <div class="grid grid-cols-2 gap-2">
+              <input type="number" id="item-amount" placeholder="金額 ￥" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 outline-none font-bold">
+              <select id="item-payment" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 outline-none">
+                <option value="現金">💵 現金</option>
+                <option value="刷卡">💳 刷卡</option>
+              </select>
+            </div>
+            <select id="item-category" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 outline-none">
+              <option value="食物">🍔 食物</option>
+              <option value="購物">🛍️ 購物</option>
+              <option value="交通">🚗 交通</option>
+              <option value="景點">🎟️ 景點</option>
+              <option value="住宿">🏨 住宿</option>
+            </select>
+            <button onclick="addExpense()" class="w-full bg-fuji-500 text-white font-bold py-2.5 rounded-2xl text-xs font-rounded">
+              + 儲存紀錄
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl p-4 shadow-sm border border-slate-100 space-y-3 text-xs">
+          <div class="flex justify-between items-center border-b border-slate-100 pb-2">
+            <h3 class="font-bold text-slate-800 font-rounded">📋 明細歷史</h3>
+            <button onclick="clearAllExpenses()" class="text-[10px] text-rose-500 hover:underline">清空所有</button>
+          </div>
+          <div id="expense-list" class="space-y-2"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 底部浮動導覽列 -->
+    <nav class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] max-w-md bg-white/90 backdrop-blur-md rounded-full shadow-lg border border-slate-200/80 p-2 flex justify-around items-center z-50">
+      <button onclick="switchTab('overview')" id="nav-overview" class="nav-btn flex flex-col items-center gap-0.5 text-fuji-600">
+        <i class="fa-solid fa-house text-sm"></i><span class="text-[10px]">總覽</span>
+      </button>
+      <button onclick="switchTab('day1')" id="nav-day1" class="nav-btn flex flex-col items-center gap-0.5 text-slate-400">
+        <i class="fa-solid fa-calendar-day text-sm"></i><span class="text-[10px]">D1</span>
+      </button>
+      <button onclick="switchTab('day2')" id="nav-day2" class="nav-btn flex flex-col items-center gap-0.5 text-slate-400">
+        <i class="fa-solid fa-calendar-day text-sm"></i><span class="text-[10px]">D2</span>
+      </button>
+      <button onclick="switchTab('day3')" id="nav-day3" class="nav-btn flex flex-col items-center gap-0.5 text-slate-400">
+        <i class="fa-solid fa-calendar-day text-sm"></i><span class="text-[10px]">D3</span>
+      </button>
+      <button onclick="switchTab('day4')" id="nav-day4" class="nav-btn flex flex-col items-center gap-0.5 text-slate-400">
+        <i class="fa-solid fa-calendar-day text-sm"></i><span class="text-[10px]">D4</span>
+      </button>
+      <button onclick="switchTab('budget')" id="nav-budget" class="nav-btn flex flex-col items-center gap-0.5 text-slate-400">
+        <i class="fa-solid fa-wallet text-sm"></i><span class="text-[10px]">記帳</span>
+      </button>
+    </nav>
+
+  </div>
+
+  <script>
+    let defaultExpenses = [
+      { id: 1, name: '下地島機場租車費用 (SA Class)', category: '交通', amount: 31020, payment: '刷卡' }
+    ];
+    let expenses = JSON.parse(localStorage.getItem('miyako_expenses')) || defaultExpenses;
+    let exchangeRate = parseFloat(localStorage.getItem('miyako_rate')) || 0.215;
+
+    document.getElementById('rate-input').value = exchangeRate;
+
+    function switchTab(tabId) {
+      ['overview', 'day1', 'day2', 'day3', 'day4', 'budget'].forEach(id => {
+        const el = document.getElementById(`content-${id}`);
+        if (el) el.classList.add('hidden');
+      });
+      document.getElementById(`content-${tabId}`).classList.remove('hidden');
+
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-white', 'text-fuji-600', 'font-bold');
+        btn.classList.add('bg-white/20', 'text-white', 'font-medium');
+      });
+      const activeTab = document.getElementById(`tab-${tabId}`);
+      if (activeTab) {
+        activeTab.classList.remove('bg-white/20', 'text-white', 'font-medium');
+        activeTab.classList.add('bg-white', 'text-fuji-600', 'font-bold');
+      }
+
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove('text-fuji-600');
+        btn.classList.add('text-slate-400');
+      });
+      const activeNav = document.getElementById(`nav-${tabId}`);
+      if (activeNav) {
+        activeNav.classList.remove('text-slate-400');
+        activeNav.classList.add('text-fuji-600');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function updateRate() {
+      const val = parseFloat(document.getElementById('rate-input').value);
+      if (!isNaN(val) && val > 0) {
+        exchangeRate = val;
+        localStorage.setItem('miyako_rate', exchangeRate);
+        renderExpenses();
+      }
+    }
+
+    function renderExpenses() {
+      const listEl = document.getElementById('expense-list');
+      listEl.innerHTML = '';
+      let totalJpy = 0, cashJpy = 0, cardJpy = 0;
+
+      if (expenses.length === 0) {
+        listEl.innerHTML = `<p class="text-center text-slate-400 py-4 text-[11px]">尚無記帳紀錄。</p>`;
+      } else {
+        expenses.forEach((item) => {
+          totalJpy += item.amount;
+          if (item.payment === '現金') cashJpy += item.amount;
+          else cardJpy += item.amount;
+
+          const itemEl = document.createElement('div');
+          itemEl.className = 'flex justify-between items-center bg-slate-50 p-2.5 rounded-2xl border border-slate-100';
+          itemEl.innerHTML = `
+            <div>
+              <div class="flex items-center gap-1.5">
+                <span class="font-bold text-slate-800">${item.name}</span>
+                <span class="text-[9px] bg-sky-100 text-sky-700 px-1.5 py-0.2 rounded">${item.category}</span>
+                <span class="text-[9px] bg-slate-200 text-slate-600 px-1.5 py-0.2 rounded">${item.payment}</span>
+              </div>
+              <p class="text-[10px] text-slate-400 mt-0.5">約 NT$ ${Math.round(item.amount * exchangeRate)}</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-fuji-600">￥${item.amount.toLocaleString()}</span>
+              <button onclick="deleteExpense(${item.id})" class="text-slate-300 hover:text-rose-500 px-1">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          `;
+          listEl.appendChild(itemEl);
+        });
+      }
+
+      document.getElementById('total-jpy').innerText = totalJpy.toLocaleString();
+      document.getElementById('total-twd').innerText = Math.round(totalJpy * exchangeRate).toLocaleString();
+      document.getElementById('cash-jpy').innerText = cashJpy.toLocaleString();
+      document.getElementById('card-jpy').innerText = cardJpy.toLocaleString();
+      localStorage.setItem('miyako_expenses', JSON.stringify(expenses));
+    }
+
+    function addExpense() {
+      const name = document.getElementById('item-name').value.trim();
+      const amount = parseFloat(document.getElementById('item-amount').value);
+      if (!name || isNaN(amount) || amount <= 0) {
+        alert('請輸入有效的名稱與金額！');
+        return;
+      }
+      expenses.unshift({
+        id: Date.now(),
+        name: name,
+        category: document.getElementById('item-category').value,
+        amount: amount,
+        payment: document.getElementById('item-payment').value
+      });
+      renderExpenses();
+      document.getElementById('item-name').value = '';
+      document.getElementById('item-amount').value = '';
+    }
+
+    function deleteExpense(id) {
+      expenses = expenses.filter(item => item.id !== id);
+      renderExpenses();
+    }
+
+    function clearAllExpenses() {
+      if (confirm('確定清空嗎？')) {
+        expenses = [];
+        renderExpenses();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderExpenses();
+    });
+  </script>
+</body>
+</html>
